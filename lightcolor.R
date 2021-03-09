@@ -5,5 +5,5 @@ lightcolor<-c('#E5D2DD', '#53A85F', '#F1BB72', '#F3B1A0', '#D6E7A3', '#57C3F3', 
                '#712820', '#DCC1DD', '#CCE0F5',  '#CCC9E6', '#625D9E', '#68A180', '#3A6963',
                '#968175'
 )
-distcolor<-c()
+distcolor<-c("#A6761D","#D95F02","#66A61E","#1B9E77","#E7298A","#7570B3","#E6AB02")
 papercolor<-c("#BF1B0B", "#66ADE5", "#252A52","#006400","#008B8B","#ACCAEF")
