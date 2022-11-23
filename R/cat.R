@@ -27,7 +27,7 @@ distcolor<-c("#A6761D","#D95F02","deepskyblue","#1B9E77","#E7298A","#7570B3","#E
 #' generate random colors without grey o not
 #' author Kai Guo
 #' @export
-gcolor<-function(ncolor, grey = False){
+gcolor<-function(ncolor, grey = FALSE){
   color_all <- grDevices::colors() 
   if(isTRUE(grey)){
       colors <- sample(palette2_no_gray, ncolor) 
@@ -35,7 +35,7 @@ gcolor<-function(ncolor, grey = False){
       no_gray <- palette2_all[grep("gr(a|e)y",             # Remove gray colors
                                       grDevices::colors(),
                                       invert = T)]
-      colors <- sample(palette2_no_gray, ncolor) 
+      colors <- sample(no_gray, ncolor,replace=FALSE) 
     }
  return(colors)
 }
