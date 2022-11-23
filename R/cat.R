@@ -25,6 +25,8 @@ distcolor<-c("#A6761D","#D95F02","deepskyblue","#1B9E77","#E7298A","#7570B3","#E
              '#800000', '#aaffc3', '#808000', '#ffd8b1', '#000075',
              '#808080', '#ffffff', '#000000')
 #' generate random colors without grey o not
+#' @param grey include the grey color or not (default: FALSE)
+#' @param alpha Transparent level
 #' author Kai Guo
 #' @export
 gcolor<-function(ncolor, grey = FALSE, alpha = 1){
@@ -44,27 +46,23 @@ gcolor<-function(ncolor, grey = FALSE, alpha = 1){
 ### https://stackoverflow.com/questions/8047668/transparent-equivalent-of-given-color
 #' Transparent color
 #' @param colors a vector of colors: "red","blue" 
+#' @param alpha Transparent level
 #' @author Kai Guo
-#' @example
-##Transparent(2, 4)
-##Transparent("red", "blue")
-##Transparent(rgb(1,0,0), rgb(0,0,1))
+#' @examples {
+#' Transparent(2, 4)
+#' Transparent("red", "blue")
+#' Transparent(rgb(1,0,0), rgb(0,0,1))
+#' }
+#' @export
 
-##Transparent("red", "blue", alpha=0.8)
-
-Transparent = function(colors, alpha=0.5) {
-
+Transparent = function(colors, alpha=0.8) {
   if(alpha<0 | alpha>1) stop("alpha must be between 0 and 1")
-
   alpha = floor(255*alpha)  
   newColor = col2rgb(col=unlist(list(colors)), alpha=FALSE)
-
   .makeTransparent = function(col, alpha) {
     rgb(red=col[1], green=col[2], blue=col[3], alpha=alpha, maxColorValue=255)
   }
-
   newColor = apply(newColor, 2, .makeTransparent, alpha=alpha)
-
   return(newColor)
-
 }
+
