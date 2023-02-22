@@ -65,4 +65,5 @@ Transparent = function(colors, alpha=0.8) {
   newColor = apply(newColor, 2, .makeTransparent, alpha=alpha)
   return(newColor)
 }
-
+#' @export
+palette2_all <- grDevices::colors()
