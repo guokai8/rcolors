@@ -64,3 +64,52 @@ hex2HSL <- function(hex) {
   
   return(hsl)
 }
+classify_color <- function(hsl) {
+  h <- hsl[1] * 360  # 将 Hue 从 [0,1] 转换到 [0°,360°]
+  s <- hsl[2]
+  
+  if (s < 0.1) {
+    return("Neutral")
+  } else if ((h >= 0 && h < 30) || (h >= 330 && h <= 360)) {
+    return("Red")
+  } else if (h >= 30 && h < 90) {
+    return("Yellow")
+  } else if (h >= 90 && h < 150) {
+    return("Green")
+  } else if (h >= 150 && h < 210) {
+    return("Cyan")
+  } else if (h >= 210 && h < 270) {
+    return("Blue")
+  } else if (h >= 270 && h < 330) {
+    return("Purple")
+  } else {
+    return("Unknown")
+  }
+}
+
+# 应用分类到数据框
+#color_data$Category <- sapply(color_data$HSL, classify_color)
+
+#' 获取指定类别的颜色
+#'
+#' @param category 颜色类别，例如 "Red", "Green", "Blue", "Neutral" 等
+#' @param n 所需颜色数量
+#' @return 返回颜色代码的向量
+#' @export
+get_colors_by_category <- function(category, n = NULL) {
+  if (!category %in% names(color_categories)) {
+    stop("未知的颜色类别。可用类别有：", paste(names(color_categories), collapse = ", "))
+  }
+  colors <- color_categories[[category]]
+  if (is.null(n)) {
+    return(colors)
+  } else {
+    if (n <= length(colors)) {
+      return(colors[1:n])
+    } else {
+      warning("请求的颜色数量超过了类别中的颜色数量，将循环使用颜色。")
+      return(rep(colors, length.out = n))
+    }
+  }
+}
+
