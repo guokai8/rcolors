@@ -1,3 +1,17 @@
+#' colors from cell
+#' @author Kai Guo
+#' @export
+cell_colors <- c(
+  "#2670B8", "#B3D9CE", "#69D8B8", "#36BD9C", "#16A16E", "#206A9A", "#5499B1", "#6DBC87",
+  "#876AAA", "#6DB3BD", "#4C8D85", "#A5CDA7", "#9E1B8E", "#62B8CA", "#AEF8F3", "#B85F81",
+  "#69B9B7", "#405BA0", "#C0F5D7", "#223C4D", "#4758A0", "#3F578B", "#C2DF7E", "#71B9A3",
+  "#BDFBDA", "#D7E7D1", "#F8C4C9", "#E79292", "#6C9D8E", "#58B390", "#B6DDCB", "#E0F0E5",
+  "#16416E", "#5499B2", "#83BBB7", "#B5D6B9", "#DAE6D3", "#6FB1B9", "#A8D7D5", "#B7CDD1",
+  "#82BCD8", "#AFE8F3", "#B5F8F1", "#494574", "#427794", "#4DA8A0", "#94CFB2", "#6D8C87",
+  "#87B6AA", "#C9E1BE", "#4D85A0", "#82BED8", "#C2DFE7", "#91BE93", "#BFD8D4", "#D35400",
+  "#E67E22", "#F1C40F", "#FBC02D", "#EC407A", "#F06292", "#00ACC1", "#26C6DA", "#C0392B"
+)
+
 #' light colors for making figures
 #' @author Kai Guo
 #' @export
