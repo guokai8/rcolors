@@ -8,4 +8,4 @@ Description: Export colors for ploting
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.2
+RoxygenNote: 7.3.2
