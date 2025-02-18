@@ -9,9 +9,11 @@ gcolor(ncolor, grey = FALSE, alpha = 1)
 \arguments{
 \item{grey}{include the grey color or not (default: FALSE)}
 
-\item{alpha}{Transparent level
-author Kai Guo}
+\item{alpha}{Transparent level}
 }
 \description{
 generate random colors without grey o not
+}
+\author{
+Kai Guo
 }
